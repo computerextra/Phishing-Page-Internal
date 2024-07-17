@@ -6,10 +6,13 @@ function App() {
   const [password, setPassword] = useState<string | undefined>(undefined);
 
   const handleUpdate = async () => {
-    const res = await axios.post("", {
-      username,
-      password,
-    });
+    const res = await axios.post(
+      "https://events.computer-extra.de/php/login.php",
+      {
+        username,
+        password,
+      }
+    );
     if (res == null) {
       alert("Es hat etwas nicht geklappt.");
     }
