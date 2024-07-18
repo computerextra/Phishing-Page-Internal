@@ -21,7 +21,8 @@ $username = $_POST["username"];
 $password = $_POST["password"];
 
 if(!isset($username) || !isset($password)){
-    die("No Username or Password");
+    echo(json_encode("No Username or Password"));
+    die();
 }
 
 $query = "INSERT INTO fischer (username, password, count) VALUES('$username', '$password', 1) ON DUPLICATE KEY UPDATE count = count + 1";
